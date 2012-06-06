@@ -1,0 +1,34 @@
+!!!
+/[if lt IE 7 ] <html lang="en" class="no-js ie6">
+/[if IE 7 ] <html lang="en" class="no-js ie7">
+/[if IE 8 ] <html lang="en" class="no-js ie8">
+/[if IE 9 ] <html lang="en" class="no-js ie9">
+/ [if (gt IE 9)|!(IE)]><!
+%html.no-js{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "UTF-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=768px, minimum-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+
+    %link{:href => "/favicon.ico", :rel => "shortcut icon"}
+    %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}
+    %link{:href => "/css/reset.css", :rel => "stylesheet"}
+    %link{:rel=>'stylesheet', :href=>'/css/style.css', :type => "text/css"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato:300,400", :rel => "stylesheet", :type => "text/css"}
+    
+    %script{:src => "js/libs/jquery-1.6.3.min.js"} 
+    %script{:src => "js/script.js"} 
+    %script{:src => "js/libs/modernizr-1.7.min.js"} 
+    %script{:src => "js/libs/jquery-ui-1.8.18.custom.min.js"} 
+    
+    %title Damian Rebman
+
+  %body
+
+    = yield
+
+    

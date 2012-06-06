@@ -1,0 +1,117 @@
+
+@import "reset", "mixins", "colors"
+
+html
+  background: url(../images/bg_tile.png)
+  height: 100%
+  
+body
+  overflow: hidden
+  font:
+    family: 'Lato', sans-serif
+    weight: 300
+    size: 13px
+  height: 100%
+  color: #f6f6f6
+  
+a
+  outline: none
+  text-decoration: none
+ 
+ul, li
+  margin: 0 
+  list-style: none
+
+input, textarea
+  outline: none
+  
+h1, h2, h3, h4, h5
+  font:
+    //family: 'Port Lligat Slab', serif
+    weight: normal
+
+h1
+  font-size: 36px
+
+h2
+  font-size: 24px
+  
+h3
+  font-size: 16px
+  @media screen and (max-width: 800px)
+    font-size: 14px  
+  
+h4
+  font-size: 13px
+  @media screen and (max-width: 800px)
+    font-size: 11px  
+
+
+
+.button
+  @include main_button($mid_blue)
+  &.small
+    padding: 0 10px
+    height: 18px
+    line-height: 17px
+    font-size: 10px
+
+.cell
+  @include box_sizing
+  @include roundcorners(10px)
+  @include boxshadow(0 1px 0px rgba(0, 0, 0, .4) inset, 0 -1px 0px rgba(255, 255, 255, .15) inset)
+  background: rgba(0, 0, 0, .1)
+  border: 1px solid rgba(0, 0, 0, .2)
+  padding: 50px
+
+
+
+#main
+
+  .notes
+    width: 50%
+    margin: 100px 25% 100px
+    h3
+      margin: 0 0 30px
+    .new_note
+      position: relative
+      .note_textarea
+        @include transition(height .2s ease)
+        @include box_sizing
+        width: 100%
+        padding: 10px
+        height: 40px  
+        resize: none
+      .admin_only_note
+        position: absolute
+        display: none
+      .submit_note
+        @include transition(all .2s ease)
+        position: absolute
+        bottom: 10px
+        right: 10px
+      &.focused
+        padding: 0 0 30px
+        .submit_note
+          bottom: 0px
+          right: 0px
+        .admin_only_note
+          bottom: 5px
+          left: 0px
+          display: block
+        #note_textarea
+          height: 75px
+          resize: vertical
+          min-height: 40px
+    #note_list
+      margin: 20px 0 0 0
+      .note
+        margin: 0 0 20px
+        padding: 0 0 20px
+        border-bottom: 1px dotted #ddd
+        .note_name
+          font: 
+            weight: normal
+          margin: 0 0 3px
+        .note_body
+          color: #666

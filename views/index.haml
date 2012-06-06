@@ -1,0 +1,13 @@
+#main.container{:role => "main"}  
+  
+
+  .notes.cell
+    %h3 Low Profile Textarea Input
+    .new_note
+      %textarea.note_textarea{:placeholder => "Write your note here"}
+      %a.button.small.submit_note + Comment
+      .admin_only_note
+        %label{:title => "Only admin users can see this comment when checked.", :for => "admin_only"} Audience
+        %select{:name => "audience"}
+          %option Public
+          %option Private
